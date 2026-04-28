@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Lucky Draw</string>
+    <string name="play_button">Spin</string>
 </resources>
