@@ -1,4 +1,29 @@
 <resources>
-    <string name="app_name">Lucky Draw</string>
-    <string name="play_button">Spin</string>
+    <string name="app_name">The Happy Wheel</string>
+    <string name="start_button">Start</string>
+    <string name="status_no_power">Start is disabled. Find power first.</string>
+    <string name="status_powered">Power online. Now stop the wobble.</string>
+    <string name="status_already_powered">Already plugged in. No extra electricity points.</string>
+    <string name="status_anchor_progress">Anchor stability %1$d/%2$d</string>
+    <string name="status_anchor_done">Anchor stable. One disaster avoided.</string>
+    <string name="status_anchor_needed">Anchor is wobbling. Tap it to stabilize.</string>
+    <string name="status_anchor_stable">Anchor is already stable.</string>
+    <string name="status_stand_done">Stand tightened. It might survive.</string>
+    <string name="status_stand_fixed">Stand is already fixed.</string>
+    <string name="status_stand_collapse">The stand collapsed. Physics wins.</string>
+    <string name="status_after_collapse">Try again after fixing the stand.</string>
+    <string name="status_wheel_missing">There is no wheel left to spin.</string>
+    <string name="status_spinning">Spinning at x%1$s speed.</string>
+    <string name="status_result">Lucky result: %1$d</string>
+    <string name="status_fire">Overheat! The wheel caught fire and vanished.</string>
+    <string name="status_reset">New round. Power is unplugged again.</string>
+
+    <string name="cable_loose">Cable: disconnected (tap to plug)</string>
+    <string name="cable_connected">Cable: connected</string>
+    <string name="anchor_unstable">Anchor: unstable (tap 5x)</string>
+    <string name="anchor_stable">Anchor: stable</string>
+    <string name="stand_loose">Stand: loose (tap to tighten)</string>
+    <string name="stand_fixed">Stand: fixed</string>
+    <string name="wheel_label">WHEEL</string>
+    <string name="unknown_result">?</string>
 </resources>
