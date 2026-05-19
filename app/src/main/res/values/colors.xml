@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="puzzle_ok">#2E7D32</color>
+    <color name="puzzle_info">#1565C0</color>
+    <color name="puzzle_warn">#EF6C00</color>
+    <color name="puzzle_danger">#C62828</color>
+    <color name="wheel_bg_high_contrast">#424242</color>
+    <color name="wheel_text_high_contrast">#FFFFFF</color>
+    <color name="room_bg">#111111</color>
+    <color name="start_glow">#FFC107</color>
 </resources>

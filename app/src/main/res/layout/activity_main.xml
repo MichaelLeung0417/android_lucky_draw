@@ -5,102 +5,150 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/room_bg"
     tools:context=".MainActivity">
 
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  HUD: declared first so room items can reference them  -->
+    <!--  elevation=4dp keeps them rendered above the overlay   -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+
+    <!-- Status bar — always readable, floats above dim overlay via elevation -->
     <TextView
         android:id="@+id/statusTV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
+        android:background="#CC000000"
+        android:elevation="4dp"
         android:gravity="center"
+        android:padding="10dp"
         android:text="@string/status_no_power"
-        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  ROOM LAYER — dimmed when unpowered                    -->
+    <!--  All items below dimOverlay in z-order (elevation=0)   -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+
+    <!-- Lucky draw wheel — center of the store room -->
     <TextView
         android:id="@+id/wheelTV"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="20dp"
-        android:background="@android:color/darker_gray"
+        android:layout_width="210dp"
+        android:layout_height="210dp"
+        android:background="@drawable/bg_wheel"
         android:gravity="center"
         android:text="@string/wheel_label"
-        android:textColor="@android:color/white"
+        android:textColor="@color/wheel_text_high_contrast"
+        android:textSize="22sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/statusTV" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.36" />
 
-    <TextView
+    <!-- ITEM: Anchor — top-center of the wheel -->
+    <Button
         android:id="@+id/anchorTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@android:color/holo_orange_light"
-        android:clickable="true"
-        android:focusable="true"
-        android:padding="8dp"
+        android:layout_marginBottom="8dp"
+        android:maxLines="2"
+        android:minWidth="80dp"
         android:text="@string/anchor_unstable"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/wheelTV" />
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/wheelTV"
+        app:layout_constraintEnd_toEndOf="@id/wheelTV"
+        app:layout_constraintStart_toStartOf="@id/wheelTV" />
 
-    <TextView
+    <!-- ITEM: Stand bolt — bottom-center of the wheel -->
+    <Button
         android:id="@+id/standTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@android:color/holo_red_light"
-        android:clickable="true"
-        android:focusable="true"
-        android:padding="8dp"
+        android:layout_marginTop="8dp"
+        android:maxLines="2"
+        android:minWidth="80dp"
         android:text="@string/stand_loose"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/anchorTV" />
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/wheelTV"
+        app:layout_constraintStart_toStartOf="@id/wheelTV"
+        app:layout_constraintTop_toBottomOf="@id/wheelTV" />
 
-    <TextView
+    <!-- ITEM: Power cable — bottom-left corner of room -->
+    <Button
         android:id="@+id/cableTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:background="@android:color/holo_blue_light"
-        android:clickable="true"
-        android:focusable="true"
-        android:padding="8dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:maxLines="2"
+        android:minWidth="80dp"
         android:text="@string/cable_loose"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/standTV" />
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/playTV"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/luckyNumberTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:text="@string/unknown_result"
-        android:textColor="#ff0000"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cableTV" />
-
+    <!-- Start button — bottom center, glows amber when powered -->
     <Button
         android:id="@+id/playTV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="28dp"
+        android:minHeight="52dp"
         android:onClick="play"
         android:text="@string/start_button"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!--  DIM OVERLAY — elevation=0, comes after room items     -->
+    <!--  so it renders above them in z-order but BELOW the     -->
+    <!--  elevated HUD views (statusTV, luckyNumberTV)          -->
+    <!--  clickable=false → all touches pass through            -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <View
+        android:id="@+id/dimOverlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.72"
+        android:background="#000000"
+        android:clickable="false"
+        android:elevation="0dp"
+        android:focusable="false"
+        android:importantForAccessibility="no"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/luckyNumberTV" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Lucky number result — elevated above overlay, always visible -->
+    <TextView
+        android:id="@+id/luckyNumberTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:elevation="4dp"
+        android:text="@string/unknown_result"
+        android:textColor="#FF5252"
+        android:textSize="52sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/standTV" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

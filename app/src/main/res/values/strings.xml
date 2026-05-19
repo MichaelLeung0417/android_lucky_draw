@@ -18,12 +18,12 @@
     <string name="status_fire">Overheat! The wheel caught fire and vanished.</string>
     <string name="status_reset">New round. Power is unplugged again.</string>
 
-    <string name="cable_loose">Cable: disconnected (tap to plug)</string>
-    <string name="cable_connected">Cable: connected</string>
-    <string name="anchor_unstable">Anchor: unstable (tap 5x)</string>
-    <string name="anchor_stable">Anchor: stable</string>
-    <string name="stand_loose">Stand: loose (tap to tighten)</string>
-    <string name="stand_fixed">Stand: fixed</string>
+    <string name="cable_loose">🔌 Loose Cable</string>
+    <string name="cable_connected">🔌 Plugged In ✓</string>
+    <string name="anchor_unstable">⚓ Anchor (×5)</string>
+    <string name="anchor_stable">⚓ Stable ✓</string>
+    <string name="stand_loose">🔩 Loose Stand</string>
+    <string name="stand_fixed">🔩 Fixed ✓</string>
     <string name="wheel_label">WHEEL</string>
-    <string name="unknown_result">?</string>
+    <string name="unknown_result">\?</string>
 </resources>

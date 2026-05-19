@@ -53,13 +53,14 @@ Spin can start only when:
 `isPowered && isAnchorStable && isStandFixed && wheelExists && !isSpinning && overheat < FIRE_THRESHOLD`
 
 ## UI Contract (Current IDs)
-- `statusTV`: one-line humor + hint.
-- `wheelTV`: spin target + disappear on fire.
-- `anchorTV`: tap to stabilize anchor.
-- `standTV`: tap to fix stand.
-- `cableTV`: tap to connect power.
-- `luckyNumberTV`: final spin result.
-- `playTV`: Start button.
+- `statusTV`: one-line humor + hint. Positioned top of screen, always above dim overlay (elevation=4dp).
+- `wheelTV`: spin target + disappear on fire. Centered on screen (vertical bias 0.36).
+- `anchorTV`: tap to stabilize anchor. **Fixed at top-center of wheel** (`constraintBottom_toTopOf="@id/wheelTV"`, centered on wheel horizontally).
+- `standTV`: tap to fix stand. **Fixed at bottom-center of wheel** (`constraintTop_toBottomOf="@id/wheelTV"`, centered on wheel horizontally).
+- `cableTV`: tap to connect power. **Fixed at bottom-left corner of room**, above Start button.
+- `luckyNumberTV`: final spin result. Below `standTV`, elevated above dim overlay (elevation=4dp).
+- `playTV`: Start button. Fixed at bottom center, glows amber (`#FFC107`) when powered.
+- `dimOverlay`: full-screen black overlay (alpha=0.72), fades to 0 on power connect, non-clickable.
 
 ## Event Flow
 - `onCreate` -> bind views -> register click handlers -> `resetRound(fullReset = true)`.
@@ -91,4 +92,3 @@ Spin can start only when:
   4. Verify rapid taps trigger fire reset.
   5. Verify successful spin after all fixes.
 - Build check: compile debug variant with Gradle.
-
