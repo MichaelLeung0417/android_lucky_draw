@@ -26,4 +26,33 @@
     <string name="stand_fixed">🔩 Fixed ✓</string>
     <string name="wheel_label">WHEEL</string>
     <string name="unknown_result">\?</string>
+
+    <string-array name="anchor_fall_messages">
+        <item>The anchor fell. Nobody knows the result.</item>
+        <item>Good, we don\'t know the result now. 🎉</item>
+        <item>Anchor down. Result: ????? Classic.</item>
+        <item>Result lost to gravity. Well done.</item>
+        <item>The anchor disagrees with your life choices.</item>
+        <item>Oops. The result is now a mystery.</item>
+    </string-array>
+
+    <string-array name="failure_messages">
+        <item>Gerald had one job…</item>
+        <item>The stand files for early retirement.</item>
+        <item>This is fine. Everything is fine. 🔥</item>
+        <item>Have you tried not breaking it?</item>
+        <item>Error 404: Structural integrity not found.</item>
+        <item>Instructions unclear. Wheel on fire.</item>
+        <item>Maybe fix things before pressing buttons.</item>
+    </string-array>
+
+    <string-array name="respawn_messages">
+        <item>Gerald is back. Very reluctantly.</item>
+        <item>Wheel respawned. Pretend that didn\'t happen.</item>
+        <item>New wheel, same problems. Fix them.</item>
+        <item>The wheel is back! The stand is still judging you.</item>
+        <item>Try again. Gerald believes in you. (He doesn\'t.)</item>
+        <item>Structurally questionable, but we\'re back.</item>
+        <item>Wheel respawned. The anchor is still wobbly. Shocking.</item>
+    </string-array>
 </resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Downward-pointing indicator triangle.
+    Viewport 56 × 48 matches the layout dimensions.
+    2 px path inset on all sides so the 4-unit white stroke
+    is fully visible and doesn't clip at the view boundary.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="56dp"
+    android:height="48dp"
+    android:viewportWidth="56"
+    android:viewportHeight="48">
+
+    <!--  White border  — drawn first (behind the fill) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 0,0 L 56,0 L 28,48 Z" />
+
+    <!--  Bright-red fill — drawn on top, inset by 3 units to expose the white border -->
+    <path
+        android:fillColor="#FF1744"
+        android:pathData="M 3,3 L 53,3 L 28,44 Z" />
+
+</vector>
+
